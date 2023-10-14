@@ -7,14 +7,14 @@
     "start": "node index"
   },
   "dependencies": {
-    "express": "4.18.2",
-    "mongoose": "7.6.1",
-    "bcrypt": "5.1.1",
-    "passport": "0.6.0",
+    "express": "*",
+    "mongoose": "*",
+    "bcrypt": "*",
+    "passport": "*",
     "passport-jwt": "*",
-    "body-parser": "1.20.2",
-    "cors": "2.8.5",
-    "jsonwebtoken": "9.0.2"
+    "body-parser": "*",
+    "cors": "*",
+    "jsonwebtoken": "*"
 
   },
   "author": "Roman Melnikov",
