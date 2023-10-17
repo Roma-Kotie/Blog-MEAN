@@ -12,18 +12,21 @@
                 <p class="text-white-50 mb-5">Welcome to my Blog!</p>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="name" [(ngModel)]="userData.name" name="name" required id="typeNameX" class="form-control form-control-lg" />
+                    <input type="name" [(ngModel)]="userData.name" name="name" required id="typeNameX" class="form-control form-control-lg" [ngClass]="{'is-invalid': submitted && !userData.name}"/>
                     <label class="form-label" for="typeNameX">Name</label>
+                    <div *ngIf="submitted && !userData.name" class="invalid-feedback">Name is required</div>
                   </div>
   
                 <div class="form-outline form-white mb-4">
-                  <input type="email" [(ngModel)]="userData.email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                  <input type="email" [(ngModel)]="userData.email" name="email" id="typeEmailX" class="form-control form-control-lg" [ngClass]="{'is-invalid': submitted && !userData.email}"/>
                   <label class="form-label" for="typeEmailX">Email</label>
+                  <div *ngIf="submitted && !userData.email" class="invalid-feedback">Email is required</div>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="password" [(ngModel)]="userData.password" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                  <input type="password" [(ngModel)]="userData.password" name="password" id="typePasswordX" class="form-control form-control-lg" [ngClass]="{'is-invalid': submitted && !userData.password}"/>
                   <label class="form-label" for="typePasswordX">Password</label>
+                  <div *ngIf="submitted && !userData.password" class="invalid-feedback">Password is required</div>
                 </div>
   
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign up</button>

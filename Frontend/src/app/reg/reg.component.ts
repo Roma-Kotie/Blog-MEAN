@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reg',
@@ -6,6 +8,11 @@ import { Component} from '@angular/core';
   styleUrls: ['./reg.component.scss']
 })
 export class RegComponent {
+
+  constructor( 
+    private authService: AuthService,
+    private router: Router,
+    ) {}
    
   userData = {
     name: '',
@@ -13,21 +20,18 @@ export class RegComponent {
     password: ''
   };
 
+  submitted = false;
+
   signUp() {
-    const user = {
-      name: this.userData.name,
-      email: this.userData.email,
-      password: this.userData.password,
+
+    this.submitted = true;
+
+    if (this.userData.name && this.userData.email && this.userData.password) {
+      // Run logic here to send data
+      console.log('Sending data:', this.userData);
     }
-    console.log(user)
     return false
   };
+//Add register user method after setting up MongoDB
 }
 
-
-export interface IUserSignIn {
-  name: string
-  login: string
-  email: string
-  password: string
-}
