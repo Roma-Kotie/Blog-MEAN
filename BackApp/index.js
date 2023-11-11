@@ -44,5 +44,4 @@ app.get('/', (req, res) => {
   res.send("Home");
 });
 
-// Ваш маршрут для обработки аккаунта (например, /account)
-app.use('/account', router); // Убедитесь, что путь к маршруту корректен
+app.use('/account', router); 

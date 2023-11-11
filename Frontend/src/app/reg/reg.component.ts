@@ -32,6 +32,6 @@ export class RegComponent {
     }
     return false
   };
-//Add register user method after setting up MongoDB
+// Add register user method after setting up MongoDB
 }
 
