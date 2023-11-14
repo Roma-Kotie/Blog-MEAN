@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent {
   
   logoutUser() {
     this.authService.logout()
-    console.log('You a logget out:');
+    console.log('You are logget out');
+    this.router.navigate(['/auth'])
   }
 }

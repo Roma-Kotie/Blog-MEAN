@@ -21,7 +21,7 @@
           </a> -->
           <a class="btn btn-sm btn-outline-light" [routerLink]="['/reg']">Sign up</a>
           <a class="btn btn-sm btn-outline-light" [routerLink]="['/auth']">Sign in</a>
-          <a class="btn btn-sm btn-outline-light" [routerLink]="['/auth']">Log out</a>
+          <a class="btn btn-sm btn-outline-light" (click)="logoutUser()">Logout</a>
         </div>
       </div>
     </header> 
