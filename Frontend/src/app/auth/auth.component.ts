@@ -27,6 +27,7 @@ export class AuthComponent {
     if ( this.userData.email && this.userData.password) {
       // Run logic here to send data
       console.log('Sending data:', this.userData);
+      this.router.navigate(['dashboard']);
     }
     return false
   };

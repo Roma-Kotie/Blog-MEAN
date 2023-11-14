@@ -29,9 +29,19 @@ export class RegComponent {
     if (this.userData.name && this.userData.email && this.userData.password) {
       // Run logic here to send data
       console.log('Sending data:', this.userData);
+      this.router.navigate(['dashboard']);
     }
     return false
   };
 // Add register user method after setting up MongoDB
+// this.authService.registerUser(userData).subscribe( data => {
+//   if (!data.success) {
+//     console.log(data.msg);
+//     this.router.navigate(['/reg'])
+//   } else {
+//     console.log(data.msg);
+//     this.router.navigate(['/dashboard'])
+//   }
+// })
 }
 
