@@ -38,4 +38,8 @@ export class AuthService {
     // this.userData = null
     localStorage.clear()
   }
+
+  createPost() {
+    //add logic
+  }
 }
