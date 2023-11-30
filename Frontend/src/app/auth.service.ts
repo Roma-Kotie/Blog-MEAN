@@ -34,8 +34,12 @@ export class AuthService {
   }
   
   logout() {
-    // this.token = token
-    // this.userData = userData
+    // this.token = null
+    // this.userData = null
     localStorage.clear()
+  }
+
+  createPost() {
+    //add logic
   }
 }
