@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  //login: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
 });
 
-// Метод для проверки пароля
+// Password verification method
 userSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };

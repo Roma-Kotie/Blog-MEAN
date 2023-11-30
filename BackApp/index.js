@@ -5,12 +5,14 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const router = require('./routes/account');
+const Post = require('./models/post');
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '150mb'}));
+app.use(bodyParser.urlencoded({limit: '150mb', extended: true, parameterLimit: 1000000}));
 
 app.use(session({
   secret: 'secret_key', // Замените на свой секретный ключ
@@ -42,7 +44,8 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
   res.send("Home");
+  Post.find().then( posts => res.json(posts))
 });
 
-// Ваш маршрут для обработки аккаунта (например, /account)
-app.use('/account', router); // Убедитесь, что путь к маршруту корректен
+// account processing route
+app.use('/account', router);
